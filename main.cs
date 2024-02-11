@@ -1,6 +1,7 @@
 ClearWCIF(true)
 
 #include "staff_import.cs"
+#include "groups_creation.cs"
 
 
 
@@ -23,5 +24,15 @@ Cluster("teams", 5, StaffMembers(), StringProperty("stage-id"),
 
 # Map(Events(), AddResults(RoundForEvent(1), Persons(CompetingIn())))
 #AddResults(_222-r1, Persons(CompetingIn(_222)))
+
+
+Define(
+  "PsychSheetTable",
+  Table(
+    {1, Array<Person>},
+    ([Column("Name", Name(), WcaLink())] + Map(Events(),
+         Column(EventId(), PsychSheetPosition())))
+    )
+)
 
 ExportWCIF()
