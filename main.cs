@@ -1,14 +1,18 @@
 ClearWCIF(true)
 
-#include "staff_import.cs"
+# FIXME: exclude staff import for now, just create some groups
+# #include "staff_import.cs"
+
 #include "groups_creation.cs"
+
+#include "competitor_assignments.cs"
 
 
 
 #Map(StageLeaders(HasRole("delegate")), WcaId())
 
-Cluster("teams", 5, StaffMembers(), StringProperty("stage-id"),
-  [LimitConstraint("Leaders", HasRole("delegate"), 2, 1)])
+#Cluster("teams", 5, StaffMembers(), StringProperty("stage-id"),
+  #[LimitConstraint("Leaders", HasRole("delegate"), 2, 1)])
 
 #Map(Rounds(), Length(Groups()))
 #Map(Rounds(), Length(Groups()))
@@ -34,5 +38,13 @@ Define(
          Column(EventId(), PsychSheetPosition())))
     )
 )
+
+Table(
+  Persons(And(Registered(), (FirstName() == "Luke"))),
+  [Column("Name", Name()),
+   Column("WCA ID", WcaId(), WcaLink()),
+   Column("Average", PersonalBest(_333)),
+   Column("Single", PersonalBest(_333, "single")),
+   Column("psych sheet ranking", PsychSheetPosition(_333))])
 
 ExportWCIF()
