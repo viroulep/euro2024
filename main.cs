@@ -1,6 +1,6 @@
 ClearWCIF(true)
 
-# FIXME: exclude staff import for now, just create some groups
+#include "import_non_competing.cs"
 # #include "staff_import.cs"
 
 #include "groups_creation.cs"
@@ -8,11 +8,6 @@ ClearWCIF(true)
 #include "competitor_assignments.cs"
 
 
-
-#Map(StageLeaders(HasRole("delegate")), WcaId())
-
-#Cluster("teams", 5, StaffMembers(), StringProperty("stage-id"),
-  #[LimitConstraint("Leaders", HasRole("delegate"), 2, 1)])
 
 #Map(Rounds(), Length(Groups()))
 #Map(Rounds(), Length(Groups()))
@@ -40,7 +35,7 @@ Define(
 )
 
 Table(
-  Persons(And(Registered(), (FirstName() == "Luke"))),
+  Sort(Persons((FirstName() == "Philippe")), PersonalBest(_333, "average")),
   [Column("Name", Name()),
    Column("WCA ID", WcaId(), WcaLink()),
    Column("Average", PersonalBest(_333)),
