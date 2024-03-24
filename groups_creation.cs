@@ -22,8 +22,8 @@ Define("MainStages", [
 Define("FinalStages", [Tuple(2, "Red Stage"), Tuple(3, "Green Stage")])
 Define("Createstuff", CreateGroups({1, Round}, {2, Number}, {3, String}, 2024-07-25T10:00, 2024-07-25T11:10))
 
-# Create groups for Thursday
 Map(MainStages(), Createstuff(_777-r1, 2, Second<Number, String>()))
+
 Map(MainStages(), CreateGroups(_555-r1, 4, Second<Number, String>(), 2024-07-25T11:10, 2024-07-25T13:10))
 Map(MainStages(), CreateGroups(_333bf-r1, 3, Second<Number, String>(), 2024-07-25T14:10, 2024-07-25T15:10))
 Map(MainStages(), CreateGroups(_666-r1, 3, Second<Number, String>(), 2024-07-25T15:10, 2024-07-25T16:35))

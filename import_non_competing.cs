@@ -8,6 +8,7 @@ AddPerson(91155, name="Nines Lázaro Alcázar") # 2018ALCA04 # AES booth
 AddPerson(146188, name="Peio Calonge") # 2019CALO01
 AddPerson(229366, name="Ricardo Klement Wulfhorst") # 2022WULF01
 AddPerson(314767, name="Tomás Hidalgo Salvador")
+AddPerson(24320, name="Asociación Española de Speedcubing")
 
 
 # Not yet confirmed
