@@ -8,7 +8,6 @@ ClearWCIF(true)
 
 #include "qualifications.cs"
 
-#include "staff_import.cs"
 
 # FIXME: do not create if exists!
 # #include "groups_creation.cs"

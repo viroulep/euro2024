@@ -13,7 +13,7 @@ AddPerson(24320, name="Asociación Española de Speedcubing")
 
 # Not yet confirmed
 # 2018PIED01
-# AddPerson(350226, name="Iván Criado García") # (2023GARC92)
+AddPerson(350226, name="Iván Criado García") # (2023GARC92)
 # Lidia Gomez Rubio
 # Not paid, should be there?
 # AddPerson(162188, name="Lorea Eriz Avila") # (2019AVIL07)

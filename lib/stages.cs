@@ -1,0 +1,21 @@
+Define("MainStages", [
+  Tuple(1, "Blue Stage"),
+  Tuple(2, "Red Stage"),
+  Tuple(3, "Green Stage"),
+  Tuple(4, "Orange Stage"),
+  Tuple(5, "Yellow Stage")
+])
+
+Define("FinalStages", [Tuple(2, "Red Stage"), Tuple(3, "Green Stage")])
+
+
+# Staff team -> stage mapping
+# This basically defines which team staffs on which stage on each day.
+
+Define(
+  "ThursdayStages",
+  [Tuple(NumberProperty("staff-team", 2008VIRO01), "Blue"),
+   Tuple(NumberProperty("staff-team", 2013EGDA01), "Red"),
+   Tuple(NumberProperty("staff-team", 2009TISS01), "Green"),
+   Tuple(NumberProperty("staff-team", 2009PROV01), "Orange"),
+   Tuple(NumberProperty("staff-team", 2003BRUC01), "Yellow")])

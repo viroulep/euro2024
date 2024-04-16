@@ -1,36 +1,12 @@
-Define(
-    "CanScramble333",
-    (PersonalBest(_333) < 20s))
-Define(
-    "CanScramble222",
-    (PersonalBest(_222) < 8s))
-Define(
-    "CanScramble444",
-    (PersonalBest(_444) < 1:00s))
-Define(
-    "CanScramble555",
-    (PersonalBest(_555) < 1:20s))
-Define(
-    "CanScramble666",
-    (PersonalBest(_666) < 3:00s))
-Define(
-    "CanScramble777",
-    (PersonalBest(_777) < 4:30s))
-Define(
-    "CanScrambleSq1",
-    (PersonalBest(_sq1) < 20s))
-Define(
-    "CanScrambleClock",
-    (PersonalBest(_clock) < 10s))
-Define(
-    "CanScrambleClockPermissive",
-    (PersonalBest(_clock) < 12s))
-Define(
-    "CanScramblePyraminx",
-    (PersonalBest(_pyram) < 8s))
-Define(
-    "CanScrambleMegaminx",
-    (PersonalBest(_minx) < 1:30s))
-Define(
-    "CanScrambleSkewb",
-    (PersonalBest(_skewb) < 8s))
+# Permitted Scramblers
+Define("CanScramble333", And((PersonalBest(_333) < 30s), In("3x3x3", ArrayProperty("scramble-events"))))
+Define("CanScramble222", And((PersonalBest(_222) < 12s), In("2x2x2", ArrayProperty("scramble-events"))))
+Define("CanScramble444", And((PersonalBest(_444) < 1:30s), In("4x4x4", ArrayProperty("scramble-events"))))
+Define("CanScramble555", And((PersonalBest(_555) < 2:00s), In("5x5x5", ArrayProperty("scramble-events"))))
+Define("CanScramble666", And((PersonalBest(_666) < 5:00s), In("6x6x6", ArrayProperty("scramble-events"))))
+Define("CanScramble777", And((PersonalBest(_777) < 6:00s), In("7x7x7", ArrayProperty("scramble-events"))))
+Define("CanScrambleSq1", And((PersonalBest(_sq1) < 30s), In("Square-1", ArrayProperty("scramble-events"))))
+Define("CanScrambleClock", And((PersonalBest(_clock) < 12s), In("Clock", ArrayProperty("scramble-events"))))
+Define("CanScramblePyraminx", And((PersonalBest(_pyram) < 12s), In("Pyraminx", ArrayProperty("scramble-events"))))
+Define("CanScrambleMegaminx", And((PersonalBest(_minx) < 1:30s), In("Megaminx", ArrayProperty("scramble-events"))))
+Define("CanScrambleSkewb", And((PersonalBest(_skewb) < 12s), In("Skewb", ArrayProperty("scramble-events"))))
