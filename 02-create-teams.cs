@@ -1,9 +1,7 @@
 #include "lib/scramble-eligibility.cs"
+#include "lib/teams-helpers.cs"
 
 ReadSpreadsheet("1olBmB3nrRNUWCgjZPU_gq7FWRduoKlair302eQXO2v4")
-
-Define("AllStaffTeamsMembers", Persons(Or((StringProperty("kind") == "Teams"), (StringProperty("kind") == "Side room"))))
-
 
 Define(
   "ScramblerConstraints",
