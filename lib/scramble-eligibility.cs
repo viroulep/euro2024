@@ -5,6 +5,7 @@ Define("CanScramble444", And((PersonalBest(_444) < 1:30s), In("4x4x4", ArrayProp
 Define("CanScramble555", And((PersonalBest(_555) < 2:00s), In("5x5x5", ArrayProperty("scramble-events"))))
 Define("CanScramble666", And((PersonalBest(_666) < 5:00s), In("6x6x6", ArrayProperty("scramble-events"))))
 Define("CanScramble777", And((PersonalBest(_777) < 6:00s), In("7x7x7", ArrayProperty("scramble-events"))))
+Define("CanScramble777Relaxed", In("7x7x7", ArrayProperty("scramble-events")))
 Define("CanScrambleSq1", And((PersonalBest(_sq1) < 30s), In("Square-1", ArrayProperty("scramble-events"))))
 Define("CanScrambleClock", And((PersonalBest(_clock) < 12s), In("Clock", ArrayProperty("scramble-events"))))
 Define("CanScramblePyraminx", And((PersonalBest(_pyram) < 12s), In("Pyraminx", ArrayProperty("scramble-events"))))

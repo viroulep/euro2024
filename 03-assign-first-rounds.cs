@@ -3,6 +3,10 @@
 #include "lib/teams-helpers.cs"
 #include "lib/scramble-eligibility.cs"
 
+# FIXME: figure out what happens if I assign staff, then try to assign competitors to compete.
+# Maybe clear out assignment for qualified competitors?
+# And assign N+2 judges?
+
 # FIXME: use WCA Live in prod
 Map(QualifiedPerEvent(),
     AddResults(RoundForEvent(1, First<Event, Array<Person>>()),
@@ -65,8 +69,19 @@ AssignGroups(_555-r1,
            EveryoneAssignmentSet()
           ))
 
+# FIXME: fix the stage color when colors->team are final for Thursday
+Define("DanielsBlindSets",
+    [AssignmentSet("DanielW",
+                   (WcaId() == "2013WALL03"),
+                   And(In(Stage(), ["Red"]), (GroupNumber() == {1, Number}))),
+     AssignmentSet("DanielE",
+                   (WcaId() == "2013EGDA01"),
+                   And(In(Stage(), ["Red"]), (GroupNumber() == {2, Number})))])
+# For now DanielW must be in 1 to drop for multi, and he delegates 3, so DanielE
+# must be in group 3.
 AssignGroups(_333bf-r1,
-    Concat([AssignmentSet("Multi competitors", QualifiedMBF(), (GroupNumber() == 1))],
+    Concat(DanielsBlindSets(1, 3),
+           [AssignmentSet("Multi competitors", QualifiedMBF(), (GroupNumber() == 1))],
            StaffSideRoomSets(ThursdayStages(), 1),
            StaffAssignmentSets(ThursdayStages(), CanScramble333()),
            EveryoneAssignmentSet()
@@ -121,7 +136,7 @@ Map(
     _777-r1,
     (Stage() == Second<Number, String>()),
     Persons((NumberProperty("staff-team") == First<Number, String>())),
-    DefaultJobs(4, CanScramble777(), 2),
+    DefaultJobs(3, CanScramble777Relaxed(), 2),
     DefaultStaffScorers(_777, 4:00s, 5)))
 
 Map(
@@ -144,8 +159,8 @@ Define("RegularSideStaffMembers",
 CreateAssignments(SideLeaders(), 5806, "staff-Delegate")
 CreateAssignments(RegularSideStaffMembers(), 5806, "staff-judge")
 
-# FIXME: 333bf red 1 is broken, put more scramblers?
-# Put Wallin is in group 1 (Egdal delegates), Egdal in group 2 (Wallin Delegates), Egdal delegates g 3
+# FIXME: removed Wallin from Megaminx for now; could he drop either this or clock?
+# Or can we simply find team leaders who don't do 10+ events?
 Map(
   ThursdayStages(),
   AssignStaff(
@@ -163,11 +178,6 @@ Map(
     Persons((NumberProperty("staff-team") == First<Number, String>())),
     DefaultJobs(4, CanScramble666(), 2),
     DefaultStaffScorers(_666, 3:00s, 5)))
-
-# FIXME: minx red 1 is broken, put more scramblers?
-# I think it's because both Delegates compete in blind and minx, and one of them competes in multi
-# move mbf a bit, wallin compete g1, egdal g2, egdal delegates 1,3, wallin 2
-# for clock put wallin g4 (already ok), egdal g3, egdal delegate 1,2,4, wallin 3
 
 Map(
   ThursdayStages(),
@@ -187,19 +197,5 @@ Map(
     DefaultJobs(4, CanScrambleClock(), 2),
     DefaultStaffScorers(_clock, 14s, 5)))
 
-# Thursday assignment report
-AssignmentReport(
-  Sort(Persons((NumberProperty("staff-team") == NumberProperty("staff-team", 2008VIRO01))), NumberProperty("staff-team")),
-  Filter(
-    Flatten(
-      Map([_777-r1, _555-r1, _333bf-r1, _666-r1, _minx-r1, _clock-r1], Groups())),
-    (Stage() == "Blue")), "1/")
-
-AssignmentReport(
-  Sort(Persons((NumberProperty("staff-team") == NumberProperty("staff-team", 2013EGDA01))), NumberProperty("staff-team")),
-  Filter(
-    Flatten(
-      Map([_777-r1, _555-r1, _333bf-r1, _666-r1, _minx-r1, _clock-r1], Groups())),
-    (Stage() == "Red")), "1/")
 
 ExportWCIF("post-assign.json")
