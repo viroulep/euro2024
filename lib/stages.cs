@@ -12,10 +12,20 @@ Define("FinalStages", [Tuple(2, "Red Stage"), Tuple(3, "Green Stage")])
 # Staff team -> stage mapping
 # This basically defines which team staffs on which stage on each day.
 
+Define("ThursdayStagesWallin",
+  [Tuple(NumberProperty("staff-team", 2013EGDA01), "Red")])
+Define("ThursdayStagesOthers", [
+  Tuple(NumberProperty("staff-team", 2008VIRO01), "Blue"),
+  Tuple(NumberProperty("staff-team", 2009TISS01), "Green"),
+  Tuple(NumberProperty("staff-team", 2009PROV01), "Orange"),
+  Tuple(NumberProperty("staff-team", 2003BRUC01), "Yellow")])
 Define(
   "ThursdayStages",
-  [Tuple(NumberProperty("staff-team", 2008VIRO01), "Blue"),
-   Tuple(NumberProperty("staff-team", 2013EGDA01), "Red"),
-   Tuple(NumberProperty("staff-team", 2009TISS01), "Green"),
-   Tuple(NumberProperty("staff-team", 2009PROV01), "Orange"),
-   Tuple(NumberProperty("staff-team", 2003BRUC01), "Yellow")])
+  Concat(ThursdayStagesWallin(), ThursdayStagesOthers()))
+Define(
+  "FridayStages",
+  [Tuple(NumberProperty("staff-team", 2003BRUC01), "Blue"),
+   Tuple(NumberProperty("staff-team", 2008VIRO01), "Red"),
+   Tuple(NumberProperty("staff-team", 2013EGDA01), "Green"),
+   Tuple(NumberProperty("staff-team", 2009TISS01), "Orange"),
+   Tuple(NumberProperty("staff-team", 2009PROV01), "Yellow")])

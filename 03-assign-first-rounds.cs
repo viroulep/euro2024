@@ -58,14 +58,14 @@ AssignGroups(_333fm-r1, EveryoneAssignmentSet(), attemptNumber=3, overwrite=true
 AssignGroups(_777-r1,
     Concat([AssignmentSet("FM competitors", QualifiedFM(), (GroupNumber() == 2))],
            TopCompetitors(_777, 20),
-           StaffAssignmentSets(ThursdayStages(), CanScramble777()),
+           StaffAssignmentSets(ThursdayStages(), CanScrambleEvent(_777)),
            EveryoneAssignmentSet()
           ))
 
 AssignGroups(_555-r1,
     Concat([AssignmentSet("FM competitors", QualifiedFM(), (GroupNumber() == 1))],
            TopCompetitors(_555, 20),
-           StaffAssignmentSets(ThursdayStages(), CanScramble555()),
+           StaffAssignmentSets(ThursdayStages(), CanScrambleEvent(_555)),
            EveryoneAssignmentSet()
           ))
 
@@ -83,35 +83,41 @@ AssignGroups(_333bf-r1,
     Concat(DanielsBlindSets(1, 3),
            [AssignmentSet("Multi competitors", QualifiedMBF(), (GroupNumber() == 1))],
            StaffSideRoomSets(ThursdayStages(), 1),
-           StaffAssignmentSets(ThursdayStages(), CanScramble333()),
+           StaffAssignmentSets(ThursdayStages(), CanScrambleEvent(_333)),
            EveryoneAssignmentSet()
           ))
 
 AssignGroups(_666-r1,
     Concat([AssignmentSet("Multi competitors", QualifiedMBF(), (GroupNumber() == 3))],
            StaffSideRoomSets(ThursdayStages(), 3),
-           StaffAssignmentSets(ThursdayStages(), CanScramble666()),
+           StaffAssignmentSets(ThursdayStages(), CanScrambleEvent(_666)),
            EveryoneAssignmentSet()
           ))
 
 AssignGroups(_minx-r1,
     Concat([AssignmentSet("Multi competitors", QualifiedMBF(), (GroupNumber() == 1))],
            StaffSideRoomSets(ThursdayStages(), 1),
-           StaffAssignmentSets(ThursdayStages(), CanScrambleMegaminx()),
+           StaffAssignmentSets(ThursdayStages(), CanScrambleEvent(_minx)),
            EveryoneAssignmentSet()
           ))
 
 AssignGroups(_clock-r1,
     Concat([AssignmentSet("Multi competitors", QualifiedMBF(), (GroupNumber() == 4))],
            StaffSideRoomSets(ThursdayStages(), 4),
-           StaffAssignmentSets(ThursdayStages(), CanScrambleClock()),
+           StaffAssignmentSets(ThursdayStages(), CanScrambleEvent(_clock)),
            EveryoneAssignmentSet()
           ))
 
-# FIXME: find a way to always assign 2 delegates
 Define("DefaultJobs",
        [
-         Job("judge", 14, assignStations=true, eligibility=Not(HasRole("delegate"))),
+         Job("judge", 14, eligibility=Not(HasRole("delegate"))),
+         Job("scrambler", {1, Number}, eligibility=And({2, Boolean(Person)}, Not(HasRole("delegate")))),
+         Job("runner", {3, Number}, eligibility=Not(HasRole("delegate"))),
+         Job("Delegate", 2, eligibility=HasRole("delegate"))
+       ])
+Define("DefaultJobsWallin",
+       [
+         Job("judge", 14, eligibility=Not(HasRole("delegate"))),
          Job("scrambler", {1, Number}, eligibility=And({2, Boolean(Person)}, Not(HasRole("delegate")))),
          Job("runner", {3, Number}, eligibility=Not(HasRole("delegate"))),
          Job("Delegate", 1, eligibility=HasRole("delegate"))
@@ -136,7 +142,7 @@ Map(
     _777-r1,
     (Stage() == Second<Number, String>()),
     Persons((NumberProperty("staff-team") == First<Number, String>())),
-    DefaultJobs(3, CanScramble777Relaxed(), 2),
+    DefaultJobs(3, CanScrambleEvent(_777), 2),
     DefaultStaffScorers(_777, 4:00s, 5)))
 
 Map(
@@ -145,7 +151,7 @@ Map(
     _555-r1,
     (Stage() == Second<Number, String>()),
     Persons((NumberProperty("staff-team") == First<Number, String>())),
-    DefaultJobs(3, CanScramble555(), 3),
+    DefaultJobs(3, CanScrambleEvent(_555), 3),
     DefaultStaffScorers(_555, 1:30s, 5)))
 
 # FIXME: a way to map _333mbf-r1-a1-g1 to activityId
@@ -156,18 +162,16 @@ Define("RegularSideStaffMembers",
     Persons(And(
         (StringProperty("kind") == "Side room"),
         Not(HasRole("delegate")))))
-CreateAssignments(SideLeaders(), 5806, "staff-Delegate")
-CreateAssignments(RegularSideStaffMembers(), 5806, "staff-judge")
+#CreateAssignments(SideLeaders(), 5806, "staff-Delegate")
+#CreateAssignments(RegularSideStaffMembers(), 5806, "staff-judge")
 
-# FIXME: removed Wallin from Megaminx for now; could he drop either this or clock?
-# Or can we simply find team leaders who don't do 10+ events?
 Map(
   ThursdayStages(),
   AssignStaff(
     _333bf-r1,
     (Stage() == Second<Number, String>()),
     Persons((NumberProperty("staff-team") == First<Number, String>())),
-    DefaultJobs(3, CanScramble333(), 3),
+    DefaultJobs(3, CanScrambleEvent(_333), 3),
     DefaultStaffScorers(_333, 30s, 5)))
 
 Map(
@@ -176,16 +180,36 @@ Map(
     _666-r1,
     (Stage() == Second<Number, String>()),
     Persons((NumberProperty("staff-team") == First<Number, String>())),
-    DefaultJobs(4, CanScramble666(), 2),
+    DefaultJobs(4, CanScrambleEvent(_666), 2),
     DefaultStaffScorers(_666, 3:00s, 5)))
+
+# FIXME: removed Wallin from Megaminx for now; could he drop either this or clock?
+# Or can we simply find team leaders who don't do 10+ events?
+Map(
+  ThursdayStagesWallin(),
+  AssignStaff(
+    _minx-r1,
+    And((Stage() == Second<Number, String>()), (GroupNumber() == 1)),
+    Persons((NumberProperty("staff-team") == First<Number, String>())),
+    DefaultJobsWallin(3, CanScrambleEvent(_minx), 3),
+    DefaultStaffScorers(_minx, 1:30s, 5)))
+
+Map(
+  ThursdayStagesOthers(),
+  AssignStaff(
+    _minx-r1,
+    And((Stage() == Second<Number, String>()), (GroupNumber() == 1)),
+    Persons((NumberProperty("staff-team") == First<Number, String>())),
+    DefaultJobs(3, CanScrambleEvent(_minx), 3),
+    DefaultStaffScorers(_minx, 1:30s, 5)))
 
 Map(
   ThursdayStages(),
   AssignStaff(
     _minx-r1,
-    (Stage() == Second<Number, String>()),
+    And((Stage() == Second<Number, String>()), (GroupNumber() > 1)),
     Persons((NumberProperty("staff-team") == First<Number, String>())),
-    DefaultJobs(3, CanScrambleMegaminx(), 3),
+    DefaultJobs(3, CanScrambleEvent(_minx), 3),
     DefaultStaffScorers(_minx, 1:30s, 5)))
 
 Map(
@@ -194,7 +218,7 @@ Map(
     _clock-r1,
     (Stage() == Second<Number, String>()),
     Persons((NumberProperty("staff-team") == First<Number, String>())),
-    DefaultJobs(4, CanScrambleClock(), 2),
+    DefaultJobs(4, CanScrambleEvent(_clock), 2),
     DefaultStaffScorers(_clock, 14s, 5)))
 
 
