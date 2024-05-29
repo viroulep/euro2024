@@ -25,7 +25,7 @@ Define(
 
 # balance unavailable staff
 
-Cluster("staff-team", 5, AllStaffTeamsMembers(), StringProperty("cluster-id"),
+Cluster("staff-team-validation", 5, AllStaffTeamsMembers(), StringProperty("staff-team"),
   Concat(
     [
      LimitConstraint("Leaders", HasRole("delegate"), 3, 1),

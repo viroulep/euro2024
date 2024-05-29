@@ -5,6 +5,9 @@ Define(
                  In(Stage(), ["Green"]),
                  featured=true)])
 
+Define("OrganizersSet",
+    [AssignmentSet("orga", (StringProperty("kind") == "Orga"), true)])
+
 # Take (teamId, stage), GroupNumber, and create an assignment set to put
 # side room members in that group.
 Define("StaffSideRoomSets",

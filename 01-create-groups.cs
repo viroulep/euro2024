@@ -48,7 +48,7 @@ CreateGroupsOnAllStages(_minx-r2, 1)
 CreateGroupsOnAllStages(_clock-r2, 1)
 CreateGroupsOnAllStages(_555-r2, 1)
 CreateGroupsOnAllStages(_sq1-r2, 1)
-CreateGroupsOnAllStages(_222-r2, 1)
+CreateGroupsOnAllStages(_222-r1, 8)
 
 CreateGroupsOnFinalStages(_666-r2, 1)
 CreateGroupsOnFinalStages(_minx-r3, 1)

@@ -24,13 +24,17 @@ Define(
   "ThursdayStages",
   Concat(ThursdayStagesWallin(), ThursdayStagesMatteo(), ThursdayStagesOthers()))
 
+Define("FridayStagesMatteo",
+  [Tuple(NumberProperty("staff-team", 2009PROV01), "Yellow")])
 Define(
-  "FridayStages",
+  "FridayStagesOthers",
   [Tuple(NumberProperty("staff-team", 2003BRUC01), "Blue"),
    Tuple(NumberProperty("staff-team", 2008VIRO01), "Red"),
    Tuple(NumberProperty("staff-team", 2013EGDA01), "Green"),
-   Tuple(NumberProperty("staff-team", 2009TISS01), "Orange"),
-   Tuple(NumberProperty("staff-team", 2009PROV01), "Yellow")])
+   Tuple(NumberProperty("staff-team", 2009TISS01), "Orange")])
+Define(
+  "FridayStages",
+  Concat(FridayStagesMatteo(), FridayStagesOthers()))
 
 Define(
   "SaturdayStages",

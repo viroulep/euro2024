@@ -25,12 +25,12 @@ AssignGroups(_333fm-r1, EveryoneAssignmentSet(), attemptNumber=3, overwrite=true
 Define("PersonsCompetingInMulti", Persons(And(QualifiedMBF(), Not((WcaId() == "2013WALL03")))))
 AssignMisc(5681,
            PersonsCompetingInMulti(),
-           [Job("competitor", Add(Length(PersonsCompetingInMulti()), -1))],
+           [Job("competitor", Length(PersonsCompetingInMulti()))],
            MakeArray<AssignmentScorer>())
 
 AssignMisc(5682,
            PersonsCompetingInMulti(),
-           [Job("competitor", Add(Length(PersonsCompetingInMulti()), -1))],
+           [Job("competitor", Length(PersonsCompetingInMulti()))],
            MakeArray<AssignmentScorer>())
 
 AssignGroups(_333mbf-r1, EveryoneAssignmentSet(), attemptNumber=1, overwrite=true)
@@ -104,7 +104,4 @@ AssignGroups(_clock-r1,
            EveryoneAssignmentSet()
           ))
 
-
-ExportWCIF("post-assign-groups.json")
-
-# #include "04-assign-staff-thursday.cs"
+ExportWCIF("post-assign-groups-th.json")
