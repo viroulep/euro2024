@@ -67,7 +67,7 @@ Map(
 
 # Afternoon
 Define("FinalStagesSu",
-    [Tuple([1, 2, 5], "Green"), Tuple([3, 4], "Red")])
+    [Tuple([1, 2, 5], "Green Stage"), Tuple([3, 4], "Red Stage")])
 
 Map(
   FinalStagesSu(),

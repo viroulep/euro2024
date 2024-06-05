@@ -12,42 +12,43 @@ Define("FinalStages", [Tuple(2, "Red Stage"), Tuple(3, "Green Stage")])
 # This basically defines which team staffs on which stage on each day.
 
 Define("ThursdayStagesWallin",
-  [Tuple(NumberProperty("staff-team", 2013EGDA01), "Red")])
+  [Tuple(NumberProperty("staff-team", 2013EGDA01), "Red Stage")])
 Define("ThursdayStagesMatteo",
-  [Tuple(NumberProperty("staff-team", 2009PROV01), "Orange")])
+  [Tuple(NumberProperty("staff-team", 2009PROV01), "Orange Stage")])
 Define("ThursdayStagesOthers", [
-  Tuple(NumberProperty("staff-team", 2008VIRO01), "Blue"),
-  Tuple(NumberProperty("staff-team", 2009TISS01), "Green"),
-  Tuple(NumberProperty("staff-team", 2003BRUC01), "Yellow")])
+  Tuple(NumberProperty("staff-team", 2008VIRO01), "Blue Stage"),
+  Tuple(NumberProperty("staff-team", 2009TISS01), "Green Stage"),
+  Tuple(NumberProperty("staff-team", 2003BRUC01), "Yellow Stage")])
 
 Define(
   "ThursdayStages",
   Concat(ThursdayStagesWallin(), ThursdayStagesMatteo(), ThursdayStagesOthers()))
 
 Define("FridayStagesMatteo",
-  [Tuple(NumberProperty("staff-team", 2009PROV01), "Yellow")])
+  [Tuple(NumberProperty("staff-team", 2009PROV01), "Yellow Stage")])
+Define("FridayStagesWallin",
+  [Tuple(NumberProperty("staff-team", 2013EGDA01), "Green Stage")])
 Define(
   "FridayStagesOthers",
-  [Tuple(NumberProperty("staff-team", 2003BRUC01), "Blue"),
-   Tuple(NumberProperty("staff-team", 2008VIRO01), "Red"),
-   Tuple(NumberProperty("staff-team", 2013EGDA01), "Green"),
-   Tuple(NumberProperty("staff-team", 2009TISS01), "Orange")])
+  [Tuple(NumberProperty("staff-team", 2003BRUC01), "Blue Stage"),
+   Tuple(NumberProperty("staff-team", 2008VIRO01), "Red Stage"),
+   Tuple(NumberProperty("staff-team", 2009TISS01), "Orange Stage")])
 Define(
   "FridayStages",
-  Concat(FridayStagesMatteo(), FridayStagesOthers()))
+  Concat(FridayStagesMatteo(), FridayStagesWallin(), FridayStagesOthers()))
 
 Define(
   "SaturdayStages",
-  [Tuple(NumberProperty("staff-team", 2009PROV01), "Blue"),
-   Tuple(NumberProperty("staff-team", 2003BRUC01), "Red"),
-   Tuple(NumberProperty("staff-team", 2008VIRO01), "Green"),
-   Tuple(NumberProperty("staff-team", 2013EGDA01), "Orange"),
-   Tuple(NumberProperty("staff-team", 2009TISS01), "Yellow")])
+  [Tuple(NumberProperty("staff-team", 2009PROV01), "Blue Stage"),
+   Tuple(NumberProperty("staff-team", 2003BRUC01), "Red Stage"),
+   Tuple(NumberProperty("staff-team", 2008VIRO01), "Green Stage"),
+   Tuple(NumberProperty("staff-team", 2013EGDA01), "Orange Stage"),
+   Tuple(NumberProperty("staff-team", 2009TISS01), "Yellow Stage")])
 
 Define(
   "SundayStages",
-  [Tuple(NumberProperty("staff-team", 2009TISS01), "Blue"),
-   Tuple(NumberProperty("staff-team", 2009PROV01), "Red"),
-   Tuple(NumberProperty("staff-team", 2003BRUC01), "Green"),
-   Tuple(NumberProperty("staff-team", 2008VIRO01), "Orange"),
-   Tuple(NumberProperty("staff-team", 2013EGDA01), "Yellow")])
+  [Tuple(NumberProperty("staff-team", 2009TISS01), "Blue Stage"),
+   Tuple(NumberProperty("staff-team", 2009PROV01), "Red Stage"),
+   Tuple(NumberProperty("staff-team", 2003BRUC01), "Green Stage"),
+   Tuple(NumberProperty("staff-team", 2008VIRO01), "Orange Stage"),
+   Tuple(NumberProperty("staff-team", 2013EGDA01), "Yellow Stage")])

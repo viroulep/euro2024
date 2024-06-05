@@ -2,7 +2,7 @@ Define(
   "TopCompetitors",
   [AssignmentSet("top",
                  (PsychSheetPosition({1, Event}) <= {2, Number}),
-                 In(Stage(), ["Green"]),
+                 In(Stage(), ["Green Stage"]),
                  featured=true)])
 
 Define("OrganizersSet",

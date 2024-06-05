@@ -56,7 +56,7 @@ Map(
     fill=true))
 
 Define("FinalStagesSat",
-    [Tuple([1, 2, 5], "Red"), Tuple([3, 4], "Green")])
+    [Tuple([1, 2, 5], "Red Stage"), Tuple([3, 4], "Green Stage")])
 
 Map(
   FinalStagesSat(),

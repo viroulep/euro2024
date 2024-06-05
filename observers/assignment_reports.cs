@@ -4,11 +4,11 @@ AssignmentReport(
   Filter(
     Flatten(
       Map([_777-r1, _555-r1, _333bf-r1, _666-r1, _minx-r1, _clock-r1], Groups())),
-    (Stage() == "Blue")), "1/")
+    (Stage() == "Blue Stage")), "1/")
 
 AssignmentReport(
   Sort(Persons((NumberProperty("staff-team") == NumberProperty("staff-team", 2013EGDA01))), NumberProperty("staff-team")),
   Filter(
     Flatten(
       Map([_777-r1, _555-r1, _333bf-r1, _666-r1, _minx-r1, _clock-r1], Groups())),
-    (Stage() == "Red")), "1/")
+    (Stage() == "Red Stage")), "1/")

@@ -35,29 +35,29 @@ AssignStaff(_333fm-r1, true, SideRoomStaffMembers(),
     [JobCountScorer(-1)])
 
 Map(
-  ThursdayStagesMatteo(),
+  Concat(ThursdayStagesWallin(), ThursdayStagesMatteo()),
   AssignStaff(
     _777-r1,
     And((Stage() == Second<Number, String>()), (GroupNumber() == 1)),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_777), 1, 3, 2, 14),
+    ParametrizedJobs(CanScrambleEvent(_777), 1, 4, 2, 14),
     DefaultStaffScorers(_777, 4:00s, 5)))
 Map(
-  ThursdayStagesMatteo(),
+  Concat(ThursdayStagesWallin(), ThursdayStagesMatteo()),
   AssignStaff(
     _777-r1,
     And((Stage() == Second<Number, String>()), (GroupNumber() > 1)),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_777), 2, 3, 2, 14),
+    ParametrizedJobs(CanScrambleEvent(_777), 2, 4, 2, 14),
     DefaultStaffScorers(_777, 4:00s, 5)))
 
 Map(
-  Concat(ThursdayStagesWallin(), ThursdayStagesOthers()),
+  ThursdayStagesOthers(),
   AssignStaff(
     _777-r1,
     (Stage() == Second<Number, String>()),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_777), 2, 3, 2, 14),
+    ParametrizedJobs(CanScrambleEvent(_777), 2, 4, 2, 14),
     DefaultStaffScorers(_777, 4:00s, 5)))
 
 Map(
@@ -66,7 +66,7 @@ Map(
     _555-r1,
     And((Stage() == Second<Number, String>()), (GroupNumber() < 3)),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_555), 1, 3, 2, 14),
+    ParametrizedJobs(CanScrambleEvent(_555), 1, 4, 2, 14),
     DefaultStaffScorers(_555, 1:30s, 5)))
 Map(
   ThursdayStagesMatteo(),
@@ -74,16 +74,33 @@ Map(
     _555-r1,
     And((Stage() == Second<Number, String>()), (GroupNumber() > 2)),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_555), 2, 3, 2, 14),
+    ParametrizedJobs(CanScrambleEvent(_555), 2, 4, 2, 14),
     DefaultStaffScorers(_555, 1:30s, 5)))
 
 Map(
-  Concat(ThursdayStagesWallin(), ThursdayStagesOthers()),
+  ThursdayStagesWallin(),
+  AssignStaff(
+    _555-r1,
+    And((Stage() == Second<Number, String>()), (GroupNumber() < 2)),
+    StaffTeamMembers(First<Number, String>(), "Th"),
+    ParametrizedJobs(CanScrambleEvent(_555), 2, 4, 2, 14),
+    DefaultStaffScorers(_555, 1:30s, 5)))
+Map(
+  ThursdayStagesWallin(),
+  AssignStaff(
+    _555-r1,
+    And((Stage() == Second<Number, String>()), (GroupNumber() > 1)),
+    StaffTeamMembers(First<Number, String>(), "Th"),
+    ParametrizedJobs(CanScrambleEvent(_555), 1, 4, 2, 14),
+    DefaultStaffScorers(_555, 1:30s, 5)))
+
+Map(
+  ThursdayStagesOthers(),
   AssignStaff(
     _555-r1,
     (Stage() == Second<Number, String>()),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_555), 2, 3, 2, 14),
+    ParametrizedJobs(CanScrambleEvent(_555), 2, 4, 2, 14),
     DefaultStaffScorers(_555, 1:30s, 5)))
 
 Map(
@@ -130,7 +147,7 @@ Map(
     _minx-r1,
     And((Stage() == Second<Number, String>()), (GroupNumber() == 1)),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_minx), 1, 3, 3, 14),
+    ParametrizedJobs(CanScrambleEvent(_minx), 1, 4, 2, 14),
     DefaultStaffScorers(_minx, 1:30s, 5)))
 Map(
   ThursdayStagesWallin(),
@@ -138,7 +155,7 @@ Map(
     _minx-r1,
     And((Stage() == Second<Number, String>()), (GroupNumber() > 1)),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_minx), 2, 3, 3, 14),
+    ParametrizedJobs(CanScrambleEvent(_minx), 2, 4, 2, 14),
     DefaultStaffScorers(_minx, 1:30s, 5)))
 
 Map(
@@ -147,7 +164,7 @@ Map(
     _minx-r1,
     (Stage() == Second<Number, String>()),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_minx), 2, 3, 3, 14),
+    ParametrizedJobs(CanScrambleEvent(_minx), 2, 4, 2, 14),
     DefaultStaffScorers(_minx, 1:30s, 5)))
 
 # Same issue with clock, since Daniel competes in MBF
@@ -157,7 +174,7 @@ Map(
     _clock-r1,
     And((Stage() == Second<Number, String>()), (GroupNumber() == 1)),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_clock), 1, 3, 3, 14),
+    ParametrizedJobs(CanScrambleEvent(_clock), 1, 4, 2, 14),
     DefaultStaffScorers(_clock, 14s, 5)))
 Map(
   ThursdayStagesWallin(),
@@ -165,7 +182,7 @@ Map(
     _clock-r1,
     And((Stage() == Second<Number, String>()), (GroupNumber() > 1)),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_clock), 2, 3, 3, 14),
+    ParametrizedJobs(CanScrambleEvent(_clock), 2, 4, 2, 14),
     DefaultStaffScorers(_clock, 14s, 5)))
 
 Map(
@@ -174,7 +191,7 @@ Map(
     _clock-r1,
     (Stage() == Second<Number, String>()),
     StaffTeamMembers(First<Number, String>(), "Th"),
-    ParametrizedJobs(CanScrambleEvent(_clock), 2, 3, 3, 14),
+    ParametrizedJobs(CanScrambleEvent(_clock), 2, 4, 2, 14),
     DefaultStaffScorers(_clock, 14s, 5)))
 
 ExportWCIF("post-assign-staff.json")

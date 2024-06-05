@@ -9,9 +9,9 @@
 # And assign N+2 judges?
 
 # FIXME: use WCA Live in prod
-Map(QualifiedPerEvent(),
-    AddResults(RoundForEvent(1, First<Event, Array<Person>>()),
-               Second<Event, Array<Person>>(), overwrite=true))
+#Map(QualifiedPerEvent(),
+    #AddResults(RoundForEvent(1, First<Event, Array<Person>>()),
+               #Second<Event, Array<Person>>(), overwrite=true))
 
 
 # TODO: assign people who should compete early, ie data entry, maybe stream?
@@ -64,10 +64,10 @@ AssignGroups(_555-r1,
 Define("DanielsBlindSets",
     [AssignmentSet("DanielW",
                    (WcaId() == "2013WALL03"),
-                   And(In(Stage(), ["Red"]), (GroupNumber() == {1, Number}))),
+                   And(In(Stage(), ["Red Stage"]), (GroupNumber() == {1, Number}))),
      AssignmentSet("DanielE",
                    (WcaId() == "2013EGDA01"),
-                   And(In(Stage(), ["Red"]), (GroupNumber() == {2, Number})))])
+                   And(In(Stage(), ["Red Stage"]), (GroupNumber() == {2, Number})))])
 
 # For now DanielW must be in 1 to drop for multi, and he delegates 3, so DanielE
 # must be in group 3.
