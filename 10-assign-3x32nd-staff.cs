@@ -28,7 +28,7 @@ Map(
   AssignStaff(
     _333-r2,
     And((Stage() == Second<Number, String>()), (GroupNumber() == 1)),
-    Filter(Staff3x32nd(First<Number, String>(), "Sa", 1, 125), Not(In(WcaId(), DelegateG1()))),
+    Filter(Staff3x32nd(First<Number, String>(), "Su", 1, 125), Not(In(WcaId(), DelegateG1()))),
     ParametrizedJobs(CanScrambleEvent(_333), 2, 4, 3, 15),
     DefaultStaffScorers(_333, 40s, 5),
     fill=true))
@@ -38,7 +38,7 @@ Map(
   AssignStaff(
     _333-r2,
     And((Stage() == Second<Number, String>()), (GroupNumber() == 2)),
-    Filter(Staff3x32nd(First<Number, String>(), "Sa", 126, 250), Not(In(WcaId(), DelegateG2()))),
+    Filter(Staff3x32nd(First<Number, String>(), "Su", 126, 250), Not(In(WcaId(), DelegateG2()))),
     ParametrizedJobs(CanScrambleEvent(_333), 2, 4, 3, 15),
     DefaultStaffScorers(_333, 40s, 5),
     fill=true))
@@ -48,7 +48,7 @@ Map(
   AssignStaff(
     _333-r2,
     And((Stage() == Second<Number, String>()), (GroupNumber() == 3)),
-    Filter(Staff3x32nd(First<Number, String>(), "Sa", 251, 400), Not(In(WcaId(), DelegateG3()))),
+    Filter(Staff3x32nd(First<Number, String>(), "Su", 251, 400), Not(In(WcaId(), DelegateG3()))),
     ParametrizedJobs(CanScrambleEvent(_333), 2, 4, 3, 15),
     DefaultStaffScorers(_333, 40s, 5),
     fill=true))
@@ -58,7 +58,7 @@ Map(
   AssignStaff(
     _333-r2,
     And((Stage() == Second<Number, String>()), (GroupNumber() == 4)),
-    Staff3x32nd(First<Number, String>(), "Sa", 401, 550),
+    Staff3x32nd(First<Number, String>(), "Su", 401, 550),
     ParametrizedJobs(CanScrambleEvent(_333), 2, 4, 3, 15),
     DefaultStaffScorers(_333, 40s, 5),
     fill=true))

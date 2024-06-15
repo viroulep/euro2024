@@ -55,6 +55,7 @@ Map(
     DefaultStaffScorers(_sq1, 1:20s, 5),
     fill=true))
 
+# finals: _666-r2, _minx-r3, _clock-r3, _777-r2
 Define("FinalStagesSat",
     [Tuple([1, 2, 5], "Red Stage"), Tuple([3, 4], "Green Stage")])
 
@@ -63,8 +64,8 @@ Map(
   AssignStaff(
     _666-r2,
     (Stage() == Second<Array<Number>, String>()),
-    StaffTeamsMembersNotQualified(First<Array<Number>, String>(), "Sa", _666, 50),
-    ParametrizedJobs(CanScrambleEvent(_666), 2, 5, 3, 15),
+    StaffDelegatesNotQualified("Sa", _666, 30),
+    ParametrizedJobs(CanScrambleEvent(_666), 2, 4, 2, 10),
     DefaultStaffScorers(_666, 3:20s, 5),
     fill=true))
 Map(
@@ -72,8 +73,8 @@ Map(
   AssignStaff(
     _minx-r3,
     (Stage() == Second<Array<Number>, String>()),
-    StaffTeamsMembersNotQualified(First<Array<Number>, String>(), "Sa", _minx, 50),
-    ParametrizedJobs(CanScrambleEvent(_minx), 2, 5, 3, 15),
+    StaffDelegatesNotQualified("Sa", _minx, 30),
+    ParametrizedJobs(CanScrambleEvent(_minx), 2, 4, 2, 10),
     DefaultStaffScorers(_minx, 1:20s, 5),
     fill=true))
 Map(
@@ -81,8 +82,8 @@ Map(
   AssignStaff(
     _clock-r3,
     (Stage() == Second<Array<Number>, String>()),
-    StaffTeamsMembersNotQualified(First<Array<Number>, String>(), "Sa", _clock, 50),
-    ParametrizedJobs(CanScrambleEvent(_clock), 2, 5, 3, 15),
+    StaffDelegatesNotQualified("Sa", _clock, 30),
+    ParametrizedJobs(CanScrambleEvent(_clock), 2, 4, 2, 10),
     DefaultStaffScorers(_clock, 10s, 5),
     fill=true))
 Map(
@@ -90,7 +91,7 @@ Map(
   AssignStaff(
     _777-r2,
     (Stage() == Second<Array<Number>, String>()),
-    StaffTeamsMembersNotQualified(First<Array<Number>, String>(), "Sa", _777, 50),
-    ParametrizedJobs(CanScrambleEvent(_777), 2, 5, 3, 15),
+    StaffDelegatesNotQualified("Sa", _777, 30),
+    ParametrizedJobs(CanScrambleEvent(_777), 2, 4, 2, 10),
     DefaultStaffScorers(_777, 4:00s, 5),
     fill=true))

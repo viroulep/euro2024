@@ -37,10 +37,19 @@ AssignMisc(6134,
            SideRoomStaffMembers(),
            ParametrizedJobs(CanScrambleEvent(_333), 0, 5, 0, 0),
            MakeArray<AssignmentScorer>())
+
+AssignMisc(6134,
+           SideRoomStaffMembers(),
+           ParametrizedJobs(CanScrambleEvent(_333), 2, 0, 0, 0),
+           MakeArray<AssignmentScorer>(), fill=true, avoidConflicts=false)
 AssignMisc(6135,
            SideRoomStaffMembers(),
            ParametrizedJobs(CanScrambleEvent(_333), 0, 5, 0, 0),
            [ JobCountScorer(-1) ])
+AssignMisc(6135,
+           SideRoomStaffMembers(),
+           ParametrizedJobs(CanScrambleEvent(_333), 2, 0, 0, 0),
+           [ JobCountScorer(-1) ], fill=true, avoidConflicts=false)
 
 # Fill up with any staff up to 15 scramblers
 AssignMisc(6134,
