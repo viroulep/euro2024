@@ -53,8 +53,16 @@ AssignGroups(_777-r1,
            EveryoneAssignmentSet()
           ))
 
+Define("SpecificGroupSet", [
+        AssignmentSet("Specific",
+                      (WcaId() == {1, String}),
+                      And(In(Stage(), ["Orange Stage"]), (GroupNumber() == {2, Number}))
+                      )])
+
 AssignGroups(_555-r1,
     Concat([AssignmentSet("FM competitors", QualifiedFM(), (GroupNumber() == 1))],
+           SpecificGroupSet("2009PROV01", 1),
+           SpecificGroupSet("2012CANT02", 2),
            TopCompetitors(_555, 50),
            StaffAssignmentSets(ThursdayStages(), CanScrambleEvent(_555)),
            EveryoneAssignmentSet()
