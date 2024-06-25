@@ -25,8 +25,8 @@ Define("DefaultStaffScorers",
        [
          JobCountScorer(-1),
          SameJobScorer(60, -5, 4),
-         ConsecutiveJobScorer(60, -3, 0),
-         ConsecutiveJobScorer(120, -1000, 0),
+         ConsecutiveJobScorer(45, -3, 0),
+         ConsecutiveJobScorer(100, -1000, 0),
          MismatchedStationScorer(-10),
          ScrambleSpeedScorer({1, Event}, {2, AttemptResult}, {3, Number}),
          FollowingGroupScorer(-50)

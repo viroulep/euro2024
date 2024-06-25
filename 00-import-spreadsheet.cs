@@ -10,3 +10,6 @@ SetProperty(Persons((StringProperty("kind") == "Registration")), "staff-team-oth
 SetProperty(Persons((StringProperty("kind") == "Stream")), "staff-team-others", "Stream")
 SetProperty(Persons((StringProperty("kind") == "Orga")), "staff-team-others", "Organizers")
 
+SetStaffUnavailable([2014IFRA01],
+  [UnavailableBetween(2024-07-25T08:00, 2024-07-25T13:30),
+   UnavailableBetween(2024-07-26T08:00, 2024-07-26T11:30)])

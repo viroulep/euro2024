@@ -32,7 +32,7 @@ Map(
     (Stage() == Second<Number, String>()),
     StaffTeamMembersNotQualified(First<Number, String>(), "Sa", _clock, 125),
     ParametrizedJobs(CanScrambleEvent(_clock), 2, 4, 3, 15),
-    DefaultStaffScorers(_clock, 1:20s, 5),
+    DefaultStaffScorers(_clock, 20s, 5),
     fill=true))
 
 Map(
@@ -52,7 +52,7 @@ Map(
     (Stage() == Second<Number, String>()),
     StaffTeamMembersNotQualified(First<Number, String>(), "Sa", _sq1, 125),
     ParametrizedJobs(CanScrambleEvent(_sq1), 2, 4, 3, 15),
-    DefaultStaffScorers(_sq1, 1:20s, 5),
+    DefaultStaffScorers(_sq1, 18s, 5),
     fill=true))
 
 # finals: _666-r2, _minx-r3, _clock-r3, _777-r2

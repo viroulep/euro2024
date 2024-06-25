@@ -94,7 +94,7 @@ Map(
     (Stage() == Second<Number, String>()),
     StaffTeamMembers(First<Number, String>(), "Fr"),
     ParametrizedJobs(CanScrambleEvent(_sq1), 2, 3, 3, 14),
-    DefaultStaffScorers(_sq1, 10s, 5)))
+    DefaultStaffScorers(_sq1, 18s, 5)))
 
 Map(
   FridayStagesWallin(),
