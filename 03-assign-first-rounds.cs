@@ -20,6 +20,7 @@
 AssignGroups(_333fm-r1, EveryoneAssignmentSet(), attemptNumber=1, overwrite=true)
 AssignGroups(_333fm-r1, EveryoneAssignmentSet(), attemptNumber=2, overwrite=true)
 AssignGroups(_333fm-r1, EveryoneAssignmentSet(), attemptNumber=3, overwrite=true)
+
 #5681 is multi submission 1
 #5682 is multi submission 2
 Define("PersonsCompetingInMulti", Persons(And(QualifiedMBF(), Not((WcaId() == "2013WALL03")))))
