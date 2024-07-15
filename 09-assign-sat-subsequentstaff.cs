@@ -56,8 +56,6 @@ Map(
     fill=true))
 
 # finals: _666-r2, _minx-r3, _clock-r3, _777-r2
-Define("FinalStagesSat",
-    [Tuple([1, 2, 5], "Red Stage"), Tuple([3, 4], "Green Stage")])
 
 Map(
   FinalStagesSat(),

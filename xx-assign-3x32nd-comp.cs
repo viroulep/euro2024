@@ -6,7 +6,16 @@
 #include "lib/staff-assignment-helpers.cs"
 
 # FIXME: use WCA Live in prod
-#AddResults(_333-r2, Persons((PsychSheetPosition(_333) < 550)))
+#AddResults(_333-r2, Persons((PsychSheetPosition(_333) < 650)))
+
+# NOTE: if assigning does not work, fill the array below with people with
+# assignments during all groups, and clear assignments for g1 (and spread
+# accross groups if needed).
+
+Define("CleanupOneGroup", [2017NAJA02, 2017NORR01, 2013DIAZ07])
+Define("GroupsNForRound", Filter(Groups({1, Round}), (GroupNumber() == {2, Number})))
+
+ClearAssignments(CleanupOneGroup(), true, false, GroupsNForRound(_333-r2, 1))
 
 
 Define("CompDelegateG1", ["2012GOOD02", "2008PIAU01", "2013EGDA01", "2009PROV01", "2013PAPA01"])
@@ -27,13 +36,34 @@ Define("StaffG2", Or(StaffRankedBis(125, 251), In(WcaId(), CompDelegateG2())))
 Define("StaffG3", Or(StaffRankedBis(250, 401), In(WcaId(), CompDelegateG3())))
 Define("StaffG4", StaffRankedBis(400, 551))
 
+Define("StaffMembersCond", Or((StringProperty("kind") == "Teams"), (StringProperty("kind") == "Side room")))
+
+#AssignGroups(_333-r2,
+  #Concat(
+     #[AssignmentSet("G1", StaffG1(), (GroupNumber() == 1))],
+     #[AssignmentSet("G2", StaffG2(), (GroupNumber() == 2))],
+     #[AssignmentSet("G3", StaffG3(), (GroupNumber() == 3))],
+     #[AssignmentSet("G4", StaffG4(), (GroupNumber() == 4))],
+     #TopCompetitors(_333, 100),
+     #OrganizersSet(),
+     #EveryoneAssignmentSet()
+    #))
+
 AssignGroups(_333-r2,
   Concat(
-     [AssignmentSet("G1", StaffG1(), (GroupNumber() == 1))],
-     [AssignmentSet("G2", StaffG2(), (GroupNumber() == 2))],
-     [AssignmentSet("G3", StaffG3(), (GroupNumber() == 3))],
-     [AssignmentSet("G4", StaffG4(), (GroupNumber() == 4))],
+     [AssignmentSet("Staff", StaffMembersCond(), true)],
      TopCompetitors(_333, 100),
      OrganizersSet(),
      EveryoneAssignmentSet()
     ))
+
+# Fixup staff if needed
+Map(
+  SundayStages(),
+  AssignStaff(
+    _333-r2,
+    (Stage() == Second<Number, String>()),
+    AllStaffTeamsMembersAvailable("Su"),
+    ParametrizedJobs(CanScrambleEvent(_333), 2, 4, 3, 15),
+    DefaultStaffScorers(_333, 40s, 5),
+    fill=true))

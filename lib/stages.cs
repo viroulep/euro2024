@@ -52,3 +52,9 @@ Define(
    Tuple(NumberProperty("staff-team", 2003BRUC01), "Green Stage"),
    Tuple(NumberProperty("staff-team", 2008VIRO01), "Orange Stage"),
    Tuple(NumberProperty("staff-team", 2013EGDA01), "Yellow Stage")])
+
+Define("FinalStagesSat",
+    [Tuple([1, 2, 5], "Red Stage"), Tuple([3, 4], "Green Stage")])
+
+Define("FinalStagesSu",
+    [Tuple([1, 2, 5], "Green Stage"), Tuple([3, 4], "Red Stage")])

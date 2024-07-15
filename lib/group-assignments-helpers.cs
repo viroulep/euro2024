@@ -5,6 +5,13 @@ Define(
                  In(Stage(), ["Green Stage"]),
                  featured=true)])
 
+Define(
+  "TopResults",
+  [AssignmentSet("top",
+                 (RoundPosition({1, Round}) <= {2, Number}),
+                 In(Stage(), ["Green Stage"]),
+                 featured=true)])
+
 Define("OrganizersSet",
     [AssignmentSet("orga", (StringProperty("kind") == "Orga"), true)])
 
