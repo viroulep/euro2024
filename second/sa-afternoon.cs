@@ -37,10 +37,55 @@ Map(
 
 
 #TODO
-#CreateFakeResults(_222-r2, 300)
+Define(
+  "QualiGreen",
+  [AssignmentSet("QualiGreen",
+                 And((RoundPosition({1, Round}) <= {3, Number}),
+                     (RoundPosition({1, Round}) > {2, Number})),
+                 And(In(Stage(), ["Green Stage"]), (GroupNumber() == {4, Number})),
+                 featured=true)])
+Define(
+  "QualiRed",
+  [AssignmentSet("QualiRed",
+                 And((RoundPosition({1, Round}) <= {3, Number}),
+                     (RoundPosition({1, Round}) > {2, Number})),
+                 And(In(Stage(), ["Red Stage"]), (GroupNumber() == {4, Number})))])
+Define(
+  "QualiOrange",
+  [AssignmentSet("QualiOrange",
+                 And((RoundPosition({1, Round}) <= {3, Number}),
+                     (RoundPosition({1, Round}) > {2, Number})),
+                 And(In(Stage(), ["Orange Stage"]), (GroupNumber() == {4, Number})))])
+Define(
+  "QualiYellow",
+  [AssignmentSet("QualiYellow",
+                 And((RoundPosition({1, Round}) <= {3, Number}),
+                     (RoundPosition({1, Round}) > {2, Number})),
+                 And(In(Stage(), ["Yellow Stage"]), (GroupNumber() == {4, Number})))])
+
+Define(
+  "QualiBlue",
+  [AssignmentSet("QualiBlue",
+                 And((RoundPosition({1, Round}) <= {3, Number}),
+                     (RoundPosition({1, Round}) > {2, Number})),
+                 And(In(Stage(), ["Blue Stage"]), (GroupNumber() == {4, Number})))])
+
+#CreateFakeResults(_222-r2, 251)
 ClearConflictingAssignments(_222-r2)
 AssignGroups(_222-r2,
-    Concat(TopResults(_222-r2, 20), EveryoneAssignmentSet()))
+    Concat(
+      QualiGreen(_222-r2, 125, 150, 1),
+      QualiRed(_222-r2, 150, 175, 1),
+      QualiOrange(_222-r2, 175, 200, 1),
+      QualiYellow(_222-r2, 200, 225, 1),
+      QualiBlue(_222-r2, 225, 250, 1),
+      QualiGreen(_222-r2, 0, 25, 2),
+      QualiRed(_222-r2, 25, 50, 2),
+      QualiOrange(_222-r2, 50, 75, 2),
+      QualiYellow(_222-r2, 75, 100, 2),
+      QualiBlue(_222-r2, 100, 125, 2),
+      EveryoneAssignmentSet()
+    ))
 Map(
   SundayStages(),
   AssignStaff(
