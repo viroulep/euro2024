@@ -7,11 +7,18 @@
 #include "../lib/second-rounds.cs"
 
 # FIXME: use live
-#CreateFakeResults(_333bf-r2, 160)
+#CreateFakeResults(_333bf-r2, 100)
 ClearConflictingAssignments(_333bf-r2)
 
 AssignGroups(_333bf-r2,
-    Concat(TopResults(_333bf-r2, 20), EveryoneAssignmentSet()))
+    Concat(
+      Quali100Green(_333bf-r2),
+      Quali100Red(_333bf-r2),
+      Quali100Orange(_333bf-r2),
+      Quali100Yellow(_333bf-r2),
+      Quali100Blue(_333bf-r2),
+      EveryoneAssignmentSet()
+    ))
 
 Map(
   SundayStages(),
@@ -45,7 +52,14 @@ Map(
 ClearConflictingAssignments(_minx-r2)
 
 AssignGroups(_minx-r2,
-    Concat(TopResults(_minx-r2, 20), EveryoneAssignmentSet()))
+    Concat(
+      Quali100Green(_minx-r2),
+      Quali100Red(_minx-r2),
+      Quali100Orange(_minx-r2),
+      Quali100Yellow(_minx-r2),
+      Quali100Blue(_minx-r2),
+      EveryoneAssignmentSet()
+    ))
 
 # FIXME: if failure, just set the number of delegates to 1
 Map(
@@ -59,11 +73,18 @@ Map(
     fill=true))
 
 # FIXME: use live
-#CreateFakeResults(_clock-r2, 160)
+#CreateFakeResults(_clock-r2, 100)
 ClearConflictingAssignments(_clock-r2)
 
 AssignGroups(_clock-r2,
-    Concat(TopResults(_clock-r2, 20), EveryoneAssignmentSet()))
+    Concat(
+      Quali100Green(_clock-r2),
+      Quali100Red(_clock-r2),
+      Quali100Orange(_clock-r2),
+      Quali100Yellow(_clock-r2),
+      Quali100Blue(_clock-r2),
+      EveryoneAssignmentSet()
+    ))
 
 Map(
   SaturdayStages(),

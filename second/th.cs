@@ -25,11 +25,18 @@ Map(
     fill=true))
 
 # FIXME: use WCA Live
-#CreateFakeResults(_555-r2, 100)
+#CreateFakeResults(_555-r2, 101)
 ClearConflictingAssignments(_555-r2)
 
 AssignGroups(_555-r2,
-    Concat(TopResults(_555-r2, 20), EveryoneAssignmentSet()))
+    Concat(
+      Quali100Green(_555-r2),
+      Quali100Red(_555-r2),
+      Quali100Orange(_555-r2),
+      Quali100Yellow(_555-r2),
+      Quali100Blue(_555-r2),
+      EveryoneAssignmentSet()
+    ))
 
 Map(
   SaturdayStages(),

@@ -8,11 +8,18 @@
 
 
 # FIXME: use live
-#CreateFakeResults(_skewb-r2, 160)
+CreateFakeResults(_skewb-r2, 125)
 ClearConflictingAssignments(_skewb-r2)
 
 AssignGroups(_skewb-r2,
-    Concat(TopResults(_skewb-r2, 20), EveryoneAssignmentSet()))
+    Concat(
+      Quali125Green(_skewb-r2),
+      Quali125Red(_skewb-r2),
+      Quali125Orange(_skewb-r2),
+      Quali125Yellow(_skewb-r2),
+      Quali125Blue(_skewb-r2),
+      EveryoneAssignmentSet()
+    ))
 
 Map(
   SundayStages(),
@@ -25,11 +32,19 @@ Map(
     fill=true))
 
 
-#CreateFakeResults(_333oh-r2, 160)
+CreateFakeResults(_333oh-r2, 125)
 ClearConflictingAssignments(_333oh-r2)
 
 AssignGroups(_333oh-r2,
-    Concat(TopResults(_333oh-r2, 20), EveryoneAssignmentSet()))
+    Concat(
+      Quali125Green(_333oh-r2),
+      Quali125Red(_333oh-r2),
+      Quali125Orange(_333oh-r2),
+      Quali125Yellow(_333oh-r2),
+      Quali125Blue(_333oh-r2),
+      EveryoneAssignmentSet()
+    ))
+
 
 Map(
   SundayStages(),
@@ -41,11 +56,18 @@ Map(
     DefaultStaffScorers(_333, 12s, 5),
     fill=true))
 
-#CreateFakeResults(_sq1-r2, 160)
+CreateFakeResults(_sq1-r2, 125)
 ClearConflictingAssignments(_sq1-r2)
 
 AssignGroups(_sq1-r2,
-    Concat(TopResults(_sq1-r2, 20), EveryoneAssignmentSet()))
+    Concat(
+      Quali125Green(_sq1-r2),
+      Quali125Red(_sq1-r2),
+      Quali125Orange(_sq1-r2),
+      Quali125Yellow(_sq1-r2),
+      Quali125Blue(_sq1-r2),
+      EveryoneAssignmentSet()
+    ))
 
 Map(
   SaturdayStages(),
