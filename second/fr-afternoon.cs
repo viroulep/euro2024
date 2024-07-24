@@ -8,11 +8,18 @@
 
 
 # FIXME: use live
-#CreateFakeResults(_444-r2, 160)
+#CreateFakeResults(_444-r2, 100)
 ClearConflictingAssignments(_444-r2)
 
 AssignGroups(_444-r2,
-    Concat(TopResults(_444-r2, 20), EveryoneAssignmentSet()))
+    Concat(
+      Quali100Green(_444-r2),
+      Quali100Red(_444-r2),
+      Quali100Orange(_444-r2),
+      Quali100Yellow(_444-r2),
+      Quali100Blue(_444-r2),
+      EveryoneAssignmentSet()
+    ))
 
 Map(
   SaturdayStages(),
@@ -25,12 +32,18 @@ Map(
     fill=true))
 
 
-#CreateFakeResults(_pyram-r2, 160)
-
+#CreateFakeResults(_pyram-r2, 125)
 ClearConflictingAssignments(_pyram-r2)
 
 AssignGroups(_pyram-r2,
-    Concat(TopResults(_pyram-r2, 20), EveryoneAssignmentSet()))
+    Concat(
+      Quali125Green(_pyram-r2),
+      Quali125Red(_pyram-r2),
+      Quali125Orange(_pyram-r2),
+      Quali125Yellow(_pyram-r2),
+      Quali125Blue(_pyram-r2),
+      EveryoneAssignmentSet()
+    ))
 
 Map(
   SundayStages(),

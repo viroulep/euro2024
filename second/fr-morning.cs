@@ -8,7 +8,7 @@
 
 
 # FIXME: use live
-CreateFakeResults(_skewb-r2, 125)
+#CreateFakeResults(_skewb-r2, 125)
 ClearConflictingAssignments(_skewb-r2)
 
 AssignGroups(_skewb-r2,
@@ -32,7 +32,7 @@ Map(
     fill=true))
 
 
-CreateFakeResults(_333oh-r2, 125)
+#CreateFakeResults(_333oh-r2, 125)
 ClearConflictingAssignments(_333oh-r2)
 
 AssignGroups(_333oh-r2,
@@ -56,7 +56,7 @@ Map(
     DefaultStaffScorers(_333, 12s, 5),
     fill=true))
 
-CreateFakeResults(_sq1-r2, 125)
+#CreateFakeResults(_sq1-r2, 125)
 ClearConflictingAssignments(_sq1-r2)
 
 AssignGroups(_sq1-r2,

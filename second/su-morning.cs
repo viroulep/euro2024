@@ -6,10 +6,18 @@
 #include "../lib/staff-assignment-helpers.cs"
 #include "../lib/second-rounds.cs"
 
-#CreateFakeResults(_333-r3, 150)
+#CreateFakeResults(_333-r3, 126)
 ClearConflictingAssignments(_333-r3)
 AssignGroups(_333-r3,
-    Concat(TopResults(_333-r3, 20), EveryoneAssignmentSet()))
+    Concat(
+      Quali125Green(_333-r3),
+      Quali125Red(_333-r3),
+      Quali125Orange(_333-r3),
+      Quali125Yellow(_333-r3),
+      Quali125Blue(_333-r3),
+      EveryoneAssignmentSet()
+    ))
+
 Map(
   SundayStages(),
   AssignStaff(
