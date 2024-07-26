@@ -13,11 +13,11 @@ ClearConflictingAssignments(_skewb-r2)
 
 AssignGroups(_skewb-r2,
     Concat(
-      Quali125Green(_skewb-r2),
-      Quali125Red(_skewb-r2),
-      Quali125Orange(_skewb-r2),
-      Quali125Yellow(_skewb-r2),
-      Quali125Blue(_skewb-r2),
+      Quali125Green(_skewb-r1),
+      Quali125Red(_skewb-r1),
+      Quali125Orange(_skewb-r1),
+      Quali125Yellow(_skewb-r1),
+      Quali125Blue(_skewb-r1),
       EveryoneAssignmentSet()
     ))
 
@@ -37,11 +37,11 @@ ClearConflictingAssignments(_333oh-r2)
 
 AssignGroups(_333oh-r2,
     Concat(
-      Quali125Green(_333oh-r2),
-      Quali125Red(_333oh-r2),
-      Quali125Orange(_333oh-r2),
-      Quali125Yellow(_333oh-r2),
-      Quali125Blue(_333oh-r2),
+      Quali125Green(_333oh-r1),
+      Quali125Red(_333oh-r1),
+      Quali125Orange(_333oh-r1),
+      Quali125Yellow(_333oh-r1),
+      Quali125Blue(_333oh-r1),
       EveryoneAssignmentSet()
     ))
 
@@ -61,11 +61,11 @@ ClearConflictingAssignments(_sq1-r2)
 
 AssignGroups(_sq1-r2,
     Concat(
-      Quali125Green(_sq1-r2),
-      Quali125Red(_sq1-r2),
-      Quali125Orange(_sq1-r2),
-      Quali125Yellow(_sq1-r2),
-      Quali125Blue(_sq1-r2),
+      Quali125Green(_sq1-r1),
+      Quali125Red(_sq1-r1),
+      Quali125Orange(_sq1-r1),
+      Quali125Yellow(_sq1-r1),
+      Quali125Blue(_sq1-r1),
       EveryoneAssignmentSet()
     ))
 

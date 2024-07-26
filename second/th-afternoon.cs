@@ -12,11 +12,11 @@ ClearConflictingAssignments(_333bf-r2)
 
 AssignGroups(_333bf-r2,
     Concat(
-      Quali100Green(_333bf-r2),
-      Quali100Red(_333bf-r2),
-      Quali100Orange(_333bf-r2),
-      Quali100Yellow(_333bf-r2),
-      Quali100Blue(_333bf-r2),
+      Quali100Green(_333bf-r1),
+      Quali100Red(_333bf-r1),
+      Quali100Orange(_333bf-r1),
+      Quali100Yellow(_333bf-r1),
+      Quali100Blue(_333bf-r1),
       EveryoneAssignmentSet()
     ))
 
@@ -26,7 +26,7 @@ Map(
     _333bf-r2,
     (Stage() == Second<Number, String>()),
     StaffTeamMembersNotQualified(First<Number, String>(), "Su", _333bf, 1),
-    ParametrizedJobs(CanScrambleEvent(_333), 2, 4, 3, 15),
+    ParametrizedJobs(CanScrambleEvent(_333), 1, 4, 3, 15),
     DefaultStaffScorers(_333, 12s, 5),
     fill=true))
 
@@ -35,7 +35,7 @@ Map(
 ClearConflictingAssignments(_666-r2)
 
 AssignGroups(_666-r2,
-    Concat(TopResults(_666-r2, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_666-r1, 10), EveryoneAssignmentSet()))
 
 Map(
   FinalStagesSat(),
@@ -53,11 +53,11 @@ ClearConflictingAssignments(_minx-r2)
 
 AssignGroups(_minx-r2,
     Concat(
-      Quali100Green(_minx-r2),
-      Quali100Red(_minx-r2),
-      Quali100Orange(_minx-r2),
-      Quali100Yellow(_minx-r2),
-      Quali100Blue(_minx-r2),
+      Quali100Green(_minx-r1),
+      Quali100Red(_minx-r1),
+      Quali100Orange(_minx-r1),
+      Quali100Yellow(_minx-r1),
+      Quali100Blue(_minx-r1),
       EveryoneAssignmentSet()
     ))
 
@@ -68,7 +68,7 @@ Map(
     _minx-r2,
     (Stage() == Second<Number, String>()),
     StaffTeamMembersNotQualified(First<Number, String>(), "Sa", _minx, 1),
-    ParametrizedJobs(CanScrambleEvent(_minx), 2, 4, 3, 15),
+    ParametrizedJobs(CanScrambleEvent(_minx), 1, 4, 3, 15),
     DefaultStaffScorers(_minx, 1:20s, 5),
     fill=true))
 
@@ -78,11 +78,11 @@ ClearConflictingAssignments(_clock-r2)
 
 AssignGroups(_clock-r2,
     Concat(
-      Quali100Green(_clock-r2),
-      Quali100Red(_clock-r2),
-      Quali100Orange(_clock-r2),
-      Quali100Yellow(_clock-r2),
-      Quali100Blue(_clock-r2),
+      Quali100Green(_clock-r1),
+      Quali100Red(_clock-r1),
+      Quali100Orange(_clock-r1),
+      Quali100Yellow(_clock-r1),
+      Quali100Blue(_clock-r1),
       EveryoneAssignmentSet()
     ))
 

@@ -12,7 +12,7 @@
 ClearConflictingAssignments(_777-r2)
 
 AssignGroups(_777-r2,
-    Concat(TopResults(_777-r2, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_777-r1, 10), EveryoneAssignmentSet()))
 
 Map(
   FinalStagesSat(),
@@ -30,11 +30,11 @@ ClearConflictingAssignments(_555-r2)
 
 AssignGroups(_555-r2,
     Concat(
-      Quali100Green(_555-r2),
-      Quali100Red(_555-r2),
-      Quali100Orange(_555-r2),
-      Quali100Yellow(_555-r2),
-      Quali100Blue(_555-r2),
+      Quali100Green(_555-r1),
+      Quali100Red(_555-r1),
+      Quali100Orange(_555-r1),
+      Quali100Yellow(_555-r1),
+      Quali100Blue(_555-r1),
       EveryoneAssignmentSet()
     ))
 
