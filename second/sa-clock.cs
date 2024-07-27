@@ -11,7 +11,7 @@
 ClearConflictingAssignments(_clock-r3)
 
 AssignGroups(_clock-r3,
-    Concat(TopResults(_clock-r3, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_clock-r2, 10), EveryoneAssignmentSet()))
 
 Map(
   FinalStagesSat(),

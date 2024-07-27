@@ -13,7 +13,7 @@
 ClearConflictingAssignments(_444-r3)
 
 AssignGroups(_444-r3,
-    Concat(TopResults(_444-r3, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_444-r2, 10), EveryoneAssignmentSet()))
 
 Map(
   FinalStagesSu(),
@@ -29,7 +29,7 @@ Map(
 ClearConflictingAssignments(_minx-r3)
 
 AssignGroups(_minx-r3,
-    Concat(TopResults(_minx-r3, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_minx-r2, 10), EveryoneAssignmentSet()))
 
 Map(
   FinalStagesSat(),

@@ -12,7 +12,7 @@
 # assignments during all groups, and clear assignments for g1 (and spread
 # accross groups if needed).
 
-Define("CleanupOneGroup", [2017NAJA02, 2017NORR01, 2013DIAZ07])
+Define("CleanupOneGroup", [2017NAJA02, 2017NORR01, 2013DIAZ07, 2022HERN16, 2017INIE02, 2023HEND11])
 Define("GroupsNForRound", Filter(Groups({1, Round}), (GroupNumber() == {2, Number})))
 
 ClearAssignments(CleanupOneGroup(), true, false, GroupsNForRound(_333-r2, 1))
@@ -52,7 +52,7 @@ Define("StaffMembersCond", Or((StringProperty("kind") == "Teams"), (StringProper
 AssignGroups(_333-r2,
   Concat(
      [AssignmentSet("Staff", StaffMembersCond(), true)],
-     TopCompetitors(_333, 100),
+     TopResults(_333-r1, 100),
      OrganizersSet(),
      EveryoneAssignmentSet()
     ))

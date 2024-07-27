@@ -13,11 +13,11 @@ ClearConflictingAssignments(_444-r2)
 
 AssignGroups(_444-r2,
     Concat(
-      Quali100Green(_444-r2),
-      Quali100Red(_444-r2),
-      Quali100Orange(_444-r2),
-      Quali100Yellow(_444-r2),
-      Quali100Blue(_444-r2),
+      Quali100Green(_444-r1),
+      Quali100Red(_444-r1),
+      Quali100Orange(_444-r1),
+      Quali100Yellow(_444-r1),
+      Quali100Blue(_444-r1),
       EveryoneAssignmentSet()
     ))
 
@@ -37,11 +37,11 @@ ClearConflictingAssignments(_pyram-r2)
 
 AssignGroups(_pyram-r2,
     Concat(
-      Quali125Green(_pyram-r2),
-      Quali125Red(_pyram-r2),
-      Quali125Orange(_pyram-r2),
-      Quali125Yellow(_pyram-r2),
-      Quali125Blue(_pyram-r2),
+      Quali125Green(_pyram-r1),
+      Quali125Red(_pyram-r1),
+      Quali125Orange(_pyram-r1),
+      Quali125Yellow(_pyram-r1),
+      Quali125Blue(_pyram-r1),
       EveryoneAssignmentSet()
     ))
 
