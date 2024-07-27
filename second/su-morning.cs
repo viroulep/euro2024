@@ -10,11 +10,11 @@
 ClearConflictingAssignments(_333-r3)
 AssignGroups(_333-r3,
     Concat(
-      Quali125Green(_333-r3),
-      Quali125Red(_333-r3),
-      Quali125Orange(_333-r3),
-      Quali125Yellow(_333-r3),
-      Quali125Blue(_333-r3),
+      Quali125Green(_333-r2),
+      Quali125Red(_333-r2),
+      Quali125Orange(_333-r2),
+      Quali125Yellow(_333-r2),
+      Quali125Blue(_333-r2),
       EveryoneAssignmentSet()
     ))
 
@@ -33,7 +33,7 @@ Map(
 #CreateFakeResults(_333bf-r3, 30)
 ClearConflictingAssignments(_333bf-r3)
 AssignGroups(_333bf-r3,
-    Concat(TopResults(_333bf-r3, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_333bf-r2, 10), EveryoneAssignmentSet()))
 Map(
   FinalStagesSu(),
   AssignStaff(
@@ -48,7 +48,7 @@ Map(
 #CreateFakeResults(_skewb-r3, 30)
 ClearConflictingAssignments(_skewb-r3)
 AssignGroups(_skewb-r3,
-    Concat(TopResults(_skewb-r3, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_skewb-r2, 10), EveryoneAssignmentSet()))
 Map(
   FinalStagesSu(),
   AssignStaff(
@@ -63,7 +63,7 @@ Map(
 #CreateFakeResults(_222-r3, 30)
 ClearConflictingAssignments(_222-r3)
 AssignGroups(_222-r3,
-    Concat(TopResults(_222-r3, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_222-r2, 10), EveryoneAssignmentSet()))
 Map(
   FinalStagesSu(),
   AssignStaff(
@@ -78,7 +78,7 @@ Map(
 #CreateFakeResults(_pyram-r3, 30)
 ClearConflictingAssignments(_pyram-r3)
 AssignGroups(_pyram-r3,
-    Concat(TopResults(_pyram-r3, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_pyram-r2, 10), EveryoneAssignmentSet()))
 Map(
   FinalStagesSu(),
   AssignStaff(
@@ -92,7 +92,7 @@ Map(
 #CreateFakeResults(_333oh-r3, 30)
 ClearConflictingAssignments(_333oh-r3)
 AssignGroups(_333oh-r3,
-    Concat(TopResults(_333oh-r3, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_333oh-r2, 10), EveryoneAssignmentSet()))
 Map(
   FinalStagesSu(),
   AssignStaff(

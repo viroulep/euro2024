@@ -9,7 +9,7 @@
 #CreateFakeResults(_555-r3, 50)
 ClearConflictingAssignments(_555-r3)
 AssignGroups(_555-r3,
-    Concat(TopResults(_555-r3, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_555-r2, 10), EveryoneAssignmentSet()))
 Map(
   FinalStagesSu(),
   AssignStaff(
@@ -24,7 +24,7 @@ Map(
 #CreateFakeResults(_sq1-r3, 50)
 ClearConflictingAssignments(_sq1-r3)
 AssignGroups(_sq1-r3,
-    Concat(TopResults(_sq1-r3, 10), EveryoneAssignmentSet()))
+    Concat(TopResults(_sq1-r2, 10), EveryoneAssignmentSet()))
 Map(
   FinalStagesSu(),
   AssignStaff(
@@ -74,16 +74,16 @@ Define(
 ClearConflictingAssignments(_222-r2)
 AssignGroups(_222-r2,
     Concat(
-      QualiGreen(_222-r2, 125, 150, 1),
-      QualiRed(_222-r2, 150, 175, 1),
-      QualiOrange(_222-r2, 175, 200, 1),
-      QualiYellow(_222-r2, 200, 225, 1),
-      QualiBlue(_222-r2, 225, 250, 1),
-      QualiGreen(_222-r2, 0, 25, 2),
-      QualiRed(_222-r2, 25, 50, 2),
-      QualiOrange(_222-r2, 50, 75, 2),
-      QualiYellow(_222-r2, 75, 100, 2),
-      QualiBlue(_222-r2, 100, 125, 2),
+      QualiGreen(_222-r1, 125, 150, 1),
+      QualiRed(_222-r1, 150, 175, 1),
+      QualiOrange(_222-r1, 175, 200, 1),
+      QualiYellow(_222-r1, 200, 225, 1),
+      QualiBlue(_222-r1, 225, 250, 1),
+      QualiGreen(_222-r1, 0, 25, 2),
+      QualiRed(_222-r1, 25, 50, 2),
+      QualiOrange(_222-r1, 50, 75, 2),
+      QualiYellow(_222-r1, 75, 100, 2),
+      QualiBlue(_222-r1, 100, 125, 2),
       EveryoneAssignmentSet()
     ))
 Map(
